@@ -115,12 +115,12 @@ Local transfer-only measurements, **not network benchmarks**:
 
 MIT.
 
-## Optional: fish in new splits
+## Optional: fish in new tabs and splits
 
-[`rex-fish.lua`](rex-fish.lua) overrides **Command + D** (split right) and
+[`rex-fish.lua`](rex-fish.lua) overrides **Command + T** (new tab), **Command + D** (split right) and
 **Command + Shift + D** (split down) to start fish, inheriting the focused
 terminal's working directory when available. Actions use the current session's
-server, so a split in a remote session starts on that remote machine.
+server, so new tabs and splits in a remote session start on that remote machine.
 
 For Air → mini, save this file as `~/.config/rex/rex-fish.lua` on **Air** and add
 this line once to Air's existing `~/.config/rex/init.lua`:
@@ -129,15 +129,15 @@ this line once to Air's existing `~/.config/rex/init.lua`:
 require("rex-fish")
 ```
 
-Keep `require("rex-paste")` and any existing fish-tab configuration. This module
-only binds the two split shortcuts; it does not change Command + V, text pasting,
-or Command + T. If you previously pasted the same split actions into `init.lua`,
-replace that block with the require line to avoid duplicate action definitions.
+Keep `require("rex-paste")`. This module binds the tab and split shortcuts; it
+does not change Command + V or text pasting. If you previously pasted fish-tab
+or fish-split actions into `init.lua`, replace those blocks with the require
+line to avoid duplicate action definitions.
 
 The target machine must have `/opt/homebrew/bin/fish`; edit `FISH` in the module
 if your installation uses another path. Check and reload from Air's local
 terminal with the commands in the installation section above. Existing zsh panes
-stay running; create a new split to verify. Any shortcut override set in Rex's
+stay running; create a new tab or split to verify. Any shortcut override set in Rex's
 UI may need to be cleared if it takes precedence over these bindings.
 
 Validation: the module passes the installed Rex CLI's `config check`. Interactive
