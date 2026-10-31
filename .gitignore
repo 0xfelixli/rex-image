@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+*.part
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
